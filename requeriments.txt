@@ -1,4 +1,0 @@
-sentence_transformers
-preprocessor
-python -m spacy download pt_core_news_lg
-spacy[cuda11x,transformers,lookups]

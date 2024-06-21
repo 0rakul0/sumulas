@@ -209,20 +209,20 @@ fig_3d = px.scatter_3d(pca3_corpus_embeddings, x=0, y=1, z=2, color=labels3D, co
 fig_3d.show()
 
 # Word Cloud
-def criaDicFreq(wordcloud, texto):
-    text_dict = wordcloud.process_text(texto)
-    word_freq = {k: v for k, v in sorted(text_dict.items(), reverse=True, key=lambda i: i[1])}
-    return list(word_freq.items())[:5]
+# def criaDicFreq(wordcloud, texto):
+#     text_dict = wordcloud.process_text(texto)
+#     word_freq = {k: v for k, v in sorted(text_dict.items(), reverse=True, key=lambda i: i[1])}
+#     return list(word_freq.items())[:5]
 
-def word_cloud(pred_df, label):
-    wc = ' '.join(pred_df['corpus'][pred_df['cluster'] == label])
-    wordc = WordCloud(width=800, height=500, random_state=21, max_font_size=110).generate(wc)
-    listFreq = criaDicFreq(wordc, wc)
-    print(listFreq)
-    plt.figure(figsize=(10, 7))
-    plt.imshow(wordc, interpolation='bilinear')
-    plt.title(' '.join([f"{word}: {freq}" for word, freq in listFreq]))
-    plt.show()
-
-for i in range(k_2d):
-    word_cloud(df_cluster2d, i)
+# def word_cloud(pred_df, label):
+#     wc = ' '.join(pred_df['corpus'][pred_df['cluster'] == label])
+#     wordc = WordCloud(width=800, height=500, random_state=21, max_font_size=110).generate(wc)
+#     listFreq = criaDicFreq(wordc, wc)
+#     print(listFreq)
+#     plt.figure(figsize=(10, 7))
+#     plt.imshow(wordc, interpolation='bilinear')
+#     plt.title(' '.join([f"{word}: {freq}" for word, freq in listFreq]))
+#     plt.show()
+#
+# for i in range(k_2d):
+#     word_cloud(df_cluster2d, i)
